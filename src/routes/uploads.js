@@ -53,7 +53,7 @@ router.post('/image', upload.single('image'), (req, res) => {
   
   const filename = path.basename(req.file.path);
   const baseUrl = process.env.NODE_ENV === 'production' 
-    ? 'https://your-vercel-app-url.vercel.app' // Replace with your actual Vercel URL
+    ? 'https://portfolio-server-one-zeta.vercel.app/' // Replace with your actual Vercel URL
     : 'http://localhost:4000';
   
   const fileUrl = `${baseUrl}/uploads/${filename}`;

@@ -17,10 +17,14 @@ const app = express();
 
 // Middleware
 app.use(cors({ 
-  origin: true, 
-  allowedHeaders: ['Content-Type', 'x-cv-password', 'x-project-password'] 
+  origin: ['https://portfolio-client-lac-seven.vercel.app', 'http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'x-cv-password', 'x-project-password', 'Authorization'],
+  credentials: true
 }));
 app.use(express.json());
+
+app.options('*', cors());
 
 // Health check endpoint
 app.get('/health', (_req, res) => res.json({ ok: true }));
