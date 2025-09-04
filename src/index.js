@@ -34,9 +34,8 @@ app.use('/projects', projectsRouter);
 app.use('/cv', cvRouter);
 app.use('/meta', metadataRouter);
 
-// File uploads
-app.use('/uploads', express.static(path.join(__dirname,"..", 'uploads')));
-app.use('/upload', uploadsRouter);
+// File uploads route
+app.use('/api/upload', uploadsRouter);
 
 // Error handling middleware
 app.use((err, req, res, next) => {

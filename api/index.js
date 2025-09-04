@@ -1,19 +1,6 @@
 // This file handles Vercel serverless function requests
 import app from '../src/index.js';
 import mongoose from 'mongoose';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-if (process.env.NODE_ENV !== 'production') {
-    const UPLOAD_DIR = path.join(__dirname,"..", 'uploads');
-    console.log("Serving uploads from:", path.join(__dirname, '..', 'uploads'));
-    app.use('/uploads', express.static(UPLOAD_DIR));
-    console.log(`Serving static files from: ${UPLOAD_DIR}`);
-  }
-
 
 // Connect to MongoDB
 const connectDB = async () => {
