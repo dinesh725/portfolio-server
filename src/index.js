@@ -16,8 +16,9 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 // Middleware
-app.use(cors({ 
-  origin: ['https://portfolio-client-lac-seven.vercel.app', 'http://localhost:3000'],
+app.use(cors({
+  origin: ['https://portfolio-client-lac-seven.vercel.app', 'http://localhost:3000', 'http://localhost:5173','https://dineshkhatua.in',
+  'https://www.dineshkhatua.in'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'x-cv-password', 'x-project-password', 'Authorization'],
   credentials: true
